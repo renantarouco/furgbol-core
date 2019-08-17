@@ -1,0 +1,6 @@
+[submodule "ext/cgal"]
+	path = ext/cgal
+	url = https://github.com/CGAL/cgal.git
+[submodule "ext/RxCpp"]
+	path = ext/RxCpp
+	url = https://github.com/ReactiveX/RxCpp.git
