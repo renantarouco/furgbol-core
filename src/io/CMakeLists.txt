@@ -25,6 +25,6 @@ target_link_libraries(${PROJECT_NAME}
   ${Boost_SYSTEM_LIBRARY})
 
 install(TARGETS ${PROJECT_NAME}
-  DESTINATION ${CMAKE_SOURCE_DIR}/lib)
+  DESTINATION "lib")
 install(FILES ${IO_HDRS}
-  DESTINATION ${CMAKE_SOURCE_DIR}/include/io)
+  DESTINATION "include/io")
