@@ -3,7 +3,8 @@ project(furgbol-core)
 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}")
 
-add_subdirectory("ext/sslproto")
+add_subdirectory("ext/ssl-proto")
+add_subdirectory("src/furgbol-proto")
 add_subdirectory("src/io")
 
 #[[

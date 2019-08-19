@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(sslproto)
+project(ssl-proto)
 
 find_package(Protobuf REQUIRED)
 
@@ -8,6 +8,7 @@ protobuf_generate_cpp(SSLPROTO_CPP SSLPROTO_H
     "messages_robocup_ssl_geometry.proto"
     "messages_robocup_ssl_wrapper.proto"
     "messages_robocup_ssl_refbox_log.proto"
+    "messages_robocup_ssl_referee.proto"
     "game_event.proto"
     "rcon.proto"
     "referee.proto"
@@ -24,4 +25,4 @@ target_link_libraries(${PROJECT_NAME}
 install(TARGETS ${PROJECT_NAME}
     DESTINATION "lib")
 install(FILES ${SSLPROTO_H}
-    DESTINATION "include/sslproto")
+    DESTINATION "include/ssl-proto")
