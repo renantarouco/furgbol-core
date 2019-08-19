@@ -1,4 +1,6 @@
-import "messages_robocup_ssl_referee.proto";
+syntax = "proto2";
+
+import "referee.proto";
 import "messages_vision_manager.proto";
 import "messages_ai_data_manager.proto";
 

@@ -3,21 +3,22 @@ project(furgbol-proto)
 
 find_package(Protobuf REQUIRED)
 
-include_directories("${CMAKE_SOURCE_DIR}/ext/ssl-proto")
-protobuf_generate_cpp(FURGBOLPROTO_CPP FURGBOLPROTO_H
-    "ai_variables.proto"
-    "messages_ai_2Dsimulator.proto"
-    "messages_ai_data_manager.proto"
-    "messages_control.proto"
-    "messages_data_manager.proto"
-    "messages_vision_manager.proto")
+protobuf_generate_cpp(FURGBOL_PROTO_CPP FURGBOL_PROTO_H
+  "ai_variables.proto"
+  "messages_ai_2Dsimulator.proto"
+  "messages_ai_data_manager.proto"
+  "messages_control.proto"
+  "messages_data_manager.proto"
+  "messages_vision_manager.proto"
+  "game_event.proto"
+  "referee.proto")
 
 add_library(${PROJECT_NAME}
-    ${FURGBOLPROTO_CPP})
+  ${FURGBOL_PROTO_CPP})
 target_link_libraries(${PROJECT_NAME}
-    ${Protobuf_LIBRARIES})
+  ${Protobuf_LIBRARIES})
 
 install(TARGETS ${PROJECT_NAME}
-    DESTINATION "lib")
-install(FILES ${FURGBOLPROTO_H}
-    DESTINATION "include/furgbol-proto")
+  DESTINATION "lib")
+install(FILES ${FURGBOL_PROTO_H}
+  DESTINATION "include/furgbol-core/furgbol-proto")

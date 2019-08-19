@@ -27,4 +27,4 @@ target_link_libraries(${PROJECT_NAME}
 install(TARGETS ${PROJECT_NAME}
   DESTINATION "lib")
 install(FILES ${IO_HDRS}
-  DESTINATION "include/io")
+  DESTINATION "include/furgbol-core/io")

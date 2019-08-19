@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 message PathPlanningPackage {
 	repeated float x = 1;
 	repeated float y = 2;
@@ -6,9 +8,9 @@ message PathPlanningPackage {
 message AIRobotPackage {
 	optional uint32 id = 1;
 
-    optional float x = 2;
-    optional float y = 3;
-    optional float orientation = 4;
+	optional float x = 2;
+	optional float y = 3;
+	optional float orientation = 4;
 
 	optional string skill = 5;
 	optional string tactic = 6;
