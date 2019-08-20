@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+import "referee.proto";
+import "messages_vision_manager.proto";
+import "messages_control.proto";
+
+message DataPackage {
+	required VisionPackage vision = 1;
+	required SSL_Referee referee = 2;
+	optional ControlPackage control = 3;
+}
