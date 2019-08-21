@@ -3,14 +3,18 @@
 
 #include <string>
 
-#include "multicast_base.h"
+#include <boost/asio.hpp>
 
 namespace furgbol {
 namespace io {
-  class MulticastSender final : protected MulticastBase {
+  class MulticastSender {
   public:
     MulticastSender(std::string, int);
-    size_t send(std::string);
+    size_t send(const std::string&);
+  private:
+    boost::asio::io_context io_context_;
+    boost::asio::ip::udp::socket socket_;
+    boost::asio::ip::udp::endpoint endpoint_;
   };
 }
 }
