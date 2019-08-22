@@ -4,12 +4,11 @@
 #include <string>
 
 #include <boost/asio.hpp>
-
 namespace furgbol {
 namespace io {
-  class MulticastSender {
+  class UDPSender {
   public:
-    MulticastSender(std::string, int);
+    UDPSender(std::string, int);
     size_t send(const std::string&);
   private:
     boost::asio::io_context io_context_;
