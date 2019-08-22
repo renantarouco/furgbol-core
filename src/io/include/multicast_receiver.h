@@ -1,20 +1,22 @@
 #ifndef MULTICAST_RECEIVER_H
 #define MULTICAST_RECEIVER_H
 
-#include <rxcpp/rx.hpp>
+#include <array>
 
-#include "multicast_base.h"
+#include <rxcpp/rx.hpp>
+#include <boost/asio.hpp>
 
 namespace furgbol {
 namespace io {
-  class MulticastReceiver final: protected MulticastBase {
+  class MulticastReceiver {
   public:
-    MulticastReceiver(std::string, int, int);
-    ~MulticastReceiver();
+    MulticastReceiver(std::string, std::string, int);
     rxcpp::observable<std::string> datagram();
   private:
-    int buffer_size_;
-    char* buffer_;
+    boost::asio::io_context io_context_;
+    boost::asio::ip::udp::socket socket_;
+    boost::asio::ip::udp::endpoint sender_endpoint_;
+    std::array<char, 4096> buffer_;
   };
 }
 }
