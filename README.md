@@ -11,7 +11,8 @@ programming style among our projects.
 ```bash
 git clone https://github.com/furgbol/furgbol-core.git
 cd furgbol-core
-mkdir build && cd build
+mkdir build
+cd build
 cmake ..
 make
 make install
