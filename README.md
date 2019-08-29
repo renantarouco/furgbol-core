@@ -9,7 +9,7 @@ programming style among our projects.
 #### Usage
 
 ```bash
-git clone https://github.com/furgbot/furgbol-core.git
+git clone https://github.com/furgbol/furgbol-core.git
 cd furgbol-core
 mkdir build && cd build
 cmake ..
