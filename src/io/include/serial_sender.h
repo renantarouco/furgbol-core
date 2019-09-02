@@ -2,6 +2,8 @@
 #define SERIAL_SENDER_H
 
 
+#include "serial_message.h"
+
 #include <string>
 #include <iostream>
 
@@ -24,7 +26,7 @@ class SerialSender {
         SerialSender(std::string serial_port_name);
         ~SerialSender();
 
-        //void send(SerialMessage message_to_send);
+        void send(SerialMessage message_to_send);
 };
 
 } // namespace io
