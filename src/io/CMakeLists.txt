@@ -11,11 +11,13 @@ include_directories(
 
 set(IO_SRCS
   "src/multicast_receiver.cc"
+  "src/serial_message.cc"
   "src/serial_sender.cc"
   "src/udp_sender.cc")
 
 set(IO_HDRS
   "include/multicast_receiver.h"
+  "include/serial_message.h"
   "include/serial_sender.h"
   "include/udp_sender.h")
 

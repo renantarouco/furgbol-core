@@ -18,10 +18,10 @@ SerialSender::~SerialSender() {
     serial_port_.close();
 }
 
-/*void SerialSender::send(SerialMessage message_to_send) {
+void SerialSender::send(SerialMessage message_to_send) {
     message_to_send.serialize(buffer_to_send_);
     serial_port_.write_some(boost::asio::buffer(buffer_to_send_, buffer_to_send_.size()));
-}*/
+}
 
 } // namespace io
 } // namespace furgbol
