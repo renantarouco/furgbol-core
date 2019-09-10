@@ -8,21 +8,12 @@
 namespace furgbol {
 namespace io {
 
-enum F180SerialMessageHeaderFlags {
-    ROBOT_ID = 0, VEL_X = 1, VEL_Y = 2, VEL_THETA = 3, DIR_X = 4, DIR_Y = 5, DIR_THETA = 6, 
-    DRIBBLER = 7, KICK = 8
-};
-
-enum VSSSerialMessageHeaderFlags {
-    ID_ROBOT = 0, X_VEL = 1, THETA_VEL = 2, X_DIR = 3, THETA_DIR = 4
-};
-
 enum MessageTypes {
     F180 = 0, VSS = 1
 };
 
 class SerialMessage {
-    private:
+    protected:
         uint16_t pkg_id_;
         uint8_t msg_type_;
         uint8_t robot_id_;

@@ -10,6 +10,11 @@
 namespace furgbol {
 namespace io {
 
+enum F180SerialMessageHeaderFlags {
+    ROBOT_ID = 0, VEL_X = 1, VEL_Y = 2, VEL_THETA = 3, DIR_X = 4, DIR_Y = 5, DIR_THETA = 6, 
+    DRIBBLER = 7, KICK = 8
+};
+
 class F180SerialMessage : SerialMessage {
     private:
         uint8_t velocity_y_;

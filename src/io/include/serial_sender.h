@@ -20,15 +20,11 @@ class SerialSender {
         boost::asio::streambuf::const_buffers_type buffer_;
         boost::asio::serial_port serial_port_;
 
-        std::vector<uint8_t> buffer_to_send_;
-
-        SerialMessage *message_to_send;
-
     public:
         SerialSender(std::string serial_port_name);
         ~SerialSender();
 
-        void send();
+        void send(std::vector<unsigned char> buffer_to_send);
 };
 
 } // namespace io
