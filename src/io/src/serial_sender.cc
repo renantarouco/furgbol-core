@@ -3,7 +3,7 @@
 namespace furgbol {
 namespace io {
 
-SerialSender::SerialSender(std::string serial_port_name) : io_service_(), serial_port_(io_service_), buffer_(buf_.data()), buffer_to_send_(9, 0) {
+SerialSender::SerialSender(std::string serial_port_name) : io_service_(), serial_port_(io_service_), buffer_(buf_.data()) {
     serial_port_.open(serial_port_name);
 
     try {
@@ -18,9 +18,8 @@ SerialSender::~SerialSender() {
     serial_port_.close();
 }
 
-void SerialSender::send(SerialMessage message_to_send) {
-    message_to_send.serialize(buffer_to_send_);
-    serial_port_.write_some(boost::asio::buffer(buffer_to_send_, buffer_to_send_.size()));
+void SerialSender::send(std::vector<unsigned char> buffer_to_send) {
+    serial_port_.write_some(boost::asio::buffer(buffer_to_send, buffer_to_send.size()));
 }
 
 } // namespace io
