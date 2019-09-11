@@ -19,7 +19,7 @@ class VSSSerialMessage : public SerialMessage {
         VSSSerialMessage();
         ~VSSSerialMessage();
 
-        void serialize(std::vector<uint8_t> &buffer);
+        void serialize(std::vector<unsigned char> &buffer);
 
         friend std::ostream &operator <<(std::ostream &, VSSSerialMessage const &);
 };

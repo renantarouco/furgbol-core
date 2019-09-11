@@ -26,7 +26,7 @@ class F180SerialMessage : public SerialMessage {
         F180SerialMessage();
         ~F180SerialMessage();
 
-        void serialize(std::vector<uint8_t> &buffer);
+        void serialize(std::vector<unsigned char> &buffer);
 
         void clear();
 

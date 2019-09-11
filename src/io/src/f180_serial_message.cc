@@ -10,7 +10,7 @@ F180SerialMessage::F180SerialMessage() {
 
 F180SerialMessage::~F180SerialMessage() {}
 
-void F180SerialMessage::serialize(std::vector<uint8_t> &buffer) {
+void F180SerialMessage::serialize(std::vector<unsigned char> &buffer) {
     buffer[ROBOT_ID] = robot_id_;
     buffer[VEL_X] = velocity_x_;
     buffer[VEL_Y] = velocity_y_;

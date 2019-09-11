@@ -26,7 +26,7 @@ class SerialMessage {
         SerialMessage();
         ~SerialMessage();
 
-        virtual void serialize(std::vector<uint8_t> &buffer) = 0;
+        virtual void serialize(std::vector<unsigned char> &buffer) = 0;
 
         void clear();
 
