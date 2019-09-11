@@ -14,7 +14,7 @@ enum VSSSerialMessageHeaderFlags {
     ROBOT_ID = 0, VEL_X = 1, VEL_THETA = 2, DIR_X = 3, DIR_THETA = 4
 };
 
-class VSSSerialMessage : SerialMessage {
+class VSSSerialMessage : public SerialMessage {
     public:
         VSSSerialMessage();
         ~VSSSerialMessage();

@@ -21,7 +21,7 @@ class SerialMessage {
         uint8_t velocity_theta_;
         uint8_t direction_x_;
         uint8_t direction_theta_;
-
+        
     public:
         SerialMessage();
         ~SerialMessage();

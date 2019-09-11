@@ -15,7 +15,7 @@ enum F180SerialMessageHeaderFlags {
     DRIBBLER = 7, KICK = 8
 };
 
-class F180SerialMessage : SerialMessage {
+class F180SerialMessage : public SerialMessage {
     private:
         uint8_t velocity_y_;
         uint8_t direction_y_;
