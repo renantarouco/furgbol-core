@@ -8,7 +8,7 @@ VSSSerialMessage::VSSSerialMessage() { SerialMessage::clear(); }
 VSSSerialMessage::~VSSSerialMessage() {}
 
 void VSSSerialMessage::serialize(std::vector<unsigned char> &buffer) {
-    buffer[ROBOT_ID] = robot_id_;
+    buffer[ROBOT_ID] = robot_id_ + 128;
     buffer[VEL_X] = velocity_x_;
     buffer[VEL_THETA] = velocity_theta_;
     buffer[DIR_X] = direction_x_;

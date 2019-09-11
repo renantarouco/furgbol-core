@@ -11,7 +11,7 @@ F180SerialMessage::F180SerialMessage() {
 F180SerialMessage::~F180SerialMessage() {}
 
 void F180SerialMessage::serialize(std::vector<unsigned char> &buffer) {
-    buffer[ROBOT_ID] = robot_id_;
+    buffer[ROBOT_ID] = robot_id_ + 128;
     buffer[VEL_X] = velocity_x_;
     buffer[VEL_Y] = velocity_y_;
     buffer[VEL_THETA] = velocity_theta_;
