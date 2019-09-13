@@ -10,12 +10,20 @@ include_directories(
   "${CMAKE_SOURCE_DIR}/ext/RxCpp/Rx/v2/src")
 
 set(IO_SRCS
+  "src/f180_serial_message.cc"
   "src/multicast_receiver.cc"
-  "src/udp_sender.cc")
+  "src/serial_message.cc"
+  "src/serial_sender.cc"
+  "src/udp_sender.cc"
+  "src/vss_serial_message.cc")
 
 set(IO_HDRS
+  "include/f180_serial_message.h"
   "include/multicast_receiver.h"
-  "include/udp_sender.h")
+  "include/serial_message.h"
+  "include/serial_sender.h"
+  "include/udp_sender.h"
+  "include/vss_serial_message.h")
 
 add_library(${PROJECT_NAME}
   ${IO_SRCS})
