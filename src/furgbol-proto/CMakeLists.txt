@@ -70,4 +70,4 @@ target_link_libraries(${PROJECT_NAME}
 install(TARGETS ${PROJECT_NAME}
   DESTINATION "lib")
 install(FILES ${FURGBOL_PROTO_H}
-  DESTINATION "include/furgbol-core/furgbol-proto")
+  DESTINATION "include/furgbol-core/proto")
