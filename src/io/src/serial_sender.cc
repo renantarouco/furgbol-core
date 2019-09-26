@@ -3,6 +3,8 @@
 namespace furgbol {
 namespace io {
 
+SerialSender::SerialSender() : io_service_(), serial_port_(io_service_), buffer_(buf_.data()) {}
+
 SerialSender::SerialSender(std::string serial_port_name) : io_service_(), serial_port_(io_service_), buffer_(buf_.data()) {
     serial_port_.open(serial_port_name);
 
