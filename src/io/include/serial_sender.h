@@ -21,6 +21,7 @@ class SerialSender {
         boost::asio::serial_port serial_port_;
 
     public:
+        SerialSender();
         SerialSender(std::string serial_port_name);
         ~SerialSender();
 
