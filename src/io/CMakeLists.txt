@@ -1,34 +1,24 @@
 project(furgbol-core-io)
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread") 
-
-find_package(Boost COMPONENTS system REQUIRED)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -pthread")
 
 include_directories(
-  "include"
-  ${Boost_INCLUDE_DIRS}
-  "${CMAKE_SOURCE_DIR}/ext/RxCpp/Rx/v2/src")
+  "include")
 
 set(IO_SRCS
-  "src/f180_serial_message.cc"
-  "src/multicast_receiver.cc"
-  "src/serial_message.cc"
-  "src/serial_sender.cc"
-  "src/udp_sender.cc"
-  "src/vss_serial_message.cc")
+  "src/serial_writer.cc"
+  "src/f180_serial_package.cc")
 
 set(IO_HDRS
-  "include/f180_serial_message.h"
-  "include/multicast_receiver.h"
-  "include/serial_message.h"
-  "include/serial_sender.h"
-  "include/udp_sender.h"
-  "include/vss_serial_message.h")
+  "include/serial_package.h"
+  "include/serial_writer.h"
+  "include/f180_serial_package.h")
 
 add_library(${PROJECT_NAME}
   ${IO_SRCS})
 target_link_libraries(${PROJECT_NAME}
-  ${Boost_SYSTEM_LIBRARY})
+  serial pthread)
 
 install(TARGETS ${PROJECT_NAME}
   DESTINATION "lib")
