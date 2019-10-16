@@ -40,6 +40,7 @@ public:
     StopBits,
     FlowControl);
   void write(SerialPackage&);
+  void write(std::vector<uint8_t>&);
 private:
   SerialPort serial_port_;
   std::vector<uint8_t> serialization_buffer_;

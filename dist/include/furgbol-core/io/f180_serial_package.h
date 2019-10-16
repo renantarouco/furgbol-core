@@ -9,10 +9,13 @@
 namespace furgbol {
 namespace io {
 
-class F180SerialPackage : public SerialPackage
+class F180SerialPackage final : public SerialPackage
 {
 public:
   enum Direction { NEGATIVE = 1, POSITIVE = 3 };
+
+  // Constructor
+  F180SerialPackage() : SerialPackage() {}
 
   // Getters
   uint8_t robot_id() { return robot_id_; }
@@ -37,6 +40,7 @@ public:
   void kick(uint8_t kick) { kick_ = kick; }
 
   void serialize(std::vector<uint8_t>&) override;
+  void serialize(std::vector<uint8_t>::iterator, std::vector<uint8_t>::iterator) override;
 private:
   uint8_t robot_id_;
   std::tuple<uint8_t, uint8_t, uint8_t> velocity_;

@@ -36,5 +36,14 @@ void SerialWriter::write(SerialPackage& package)
   }
 }
 
+void SerialWriter::write(std::vector<uint8_t>& package)
+{
+  ArduinoCommand command = static_cast<ArduinoCommand>(serial_port_.ReadByte(0));
+  if (command == ACK) {
+    send_buffer_ = package;
+    serial_port_.Write(send_buffer_);
+  }
+}
+
 }
 }

@@ -18,7 +18,24 @@ void F180SerialPackage::serialize(std::vector<uint8_t>& serialization_buffer)
     serialization_buffer[7] = dribbler_;
     serialization_buffer[8] = kick_;
   } else {
-    throw std::range_error("serialization buffer size is smaller than expected");
+    throw std::length_error("serialization buffer size is smaller than expected");
+  }
+}
+
+void F180SerialPackage::serialize(std::vector<uint8_t>::iterator begin, std::vector<uint8_t>::iterator end)
+{
+  if (std::distance(begin, end) >= 9) {
+    *(begin + 0) = robot_id_;
+    *(begin + 1) = std::get<0>(velocity_);
+    *(begin + 2) = std::get<1>(velocity_);
+    *(begin + 3) = std::get<2>(velocity_);
+    *(begin + 4) = static_cast<uint8_t>(std::get<0>(direction_));
+    *(begin + 5) = static_cast<uint8_t>(std::get<1>(direction_));
+    *(begin + 6) = static_cast<uint8_t>(std::get<2>(direction_));
+    *(begin + 7) = dribbler_;
+    *(begin + 8) = kick_;
+  } else {
+    throw std::length_error("serialization buffer size is smaller than expected");
   }
 }
 

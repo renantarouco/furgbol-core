@@ -40,6 +40,7 @@ public:
   void kick(uint8_t kick) { kick_ = kick; }
 
   void serialize(std::vector<uint8_t>&) override;
+  void serialize(std::vector<uint8_t>::iterator, std::vector<uint8_t>::iterator) override;
 private:
   uint8_t robot_id_;
   std::tuple<uint8_t, uint8_t, uint8_t> velocity_;
