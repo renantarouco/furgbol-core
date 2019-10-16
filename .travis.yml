@@ -5,7 +5,7 @@ dist: xenial
 compiler:
   - gcc
 before_install:
-  - ./scripts/install-protobuf.sh
+  - sh scripts/install-protobuf.sh
 before_script:
   - mkdir build
   - cd build
