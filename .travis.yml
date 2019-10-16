@@ -3,7 +3,7 @@ language: cpp
 os: linux
 dist: xenial
 compiler:
-  - gcc
+  - g++
 before_install:
   - sh scripts/install-protobuf.sh
 before_script:
