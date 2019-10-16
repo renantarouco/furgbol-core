@@ -8,7 +8,7 @@ SerialSender::SerialSender() : io_service_(), serial_port_(io_service_), buffer_
 SerialSender::SerialSender(std::string serial_port_name) : io_service_(), serial_port_(io_service_), buffer_(buf_.data()) {
     try {
         serial_port_.open(serial_port_name);
-        serial_port_.set_option(boost::asio::serial_port_base::baud_rate(115200));
+        serial_port_.set_option(boost::asio::serial_port_base::baud_rate(2000000));
         serial_port_.set_option(boost::asio::serial_port_base::character_size(8));
     } catch (boost::system::system_error error) {
         std::cout << "[SERIAL COMMUNICATOR ERROR]: " << error.what() << std::endl << std::endl;
