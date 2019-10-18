@@ -19,7 +19,7 @@ using FlowControl = SerialPort::FlowControl;
 
 enum ArduinoCommand
 {
-  HIPC = 'a', ACK = 'b'
+  HIPC = 'a', ACK = 255
 };
 typedef enum ArduinoCommand ArduinoCommand;
 
@@ -40,6 +40,7 @@ public:
     StopBits,
     FlowControl);
   void write(SerialPackage&);
+  void write(const SerialPackage&);
   void write(std::vector<uint8_t>&);
 private:
   SerialPort serial_port_;

@@ -1,6 +1,4 @@
 .vscode
 
 build
-bin
-lib
-/include
+dist

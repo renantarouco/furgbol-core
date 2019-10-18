@@ -2,6 +2,7 @@
 #define SERIAL_PACKAGE_H
 
 #include <vector>
+#include <exception>
 
 namespace furgbol {
 namespace io {
@@ -17,6 +18,15 @@ protected:
   SerialPackage() : is_sent_(false) {}
   bool is_sent_;
 };
+
+namespace errors {
+
+class SerializeSizeError : public std::exception
+{
+  const char* what() const throw () { return "serialization space smaller than expected"; }
+};
+
+} // namespace errors
 
 } // namespace io
 } // namespace furgbol
