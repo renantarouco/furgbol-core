@@ -6,13 +6,11 @@ include_directories(
   "include")
 
 set(IO_SRCS
-  "src/serial_writer.cc"
-  "src/f180_serial_package.cc")
+  "src/serial_writer.cc")
 
 set(IO_HDRS
   "include/serial_package.h"
-  "include/serial_writer.h"
-  "include/f180_serial_package.h")
+  "include/serial_writer.h")
 
 add_library(${PROJECT_NAME}
   ${IO_SRCS})
