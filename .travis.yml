@@ -8,10 +8,7 @@ dist: xenial
 compiler:
   - g++
 before_install:
-  - sh scripts/install-protobuf.sh
-install:
-  - sudo apt update
-  - sudo apt install libserial-dev
+  - ./scripts/install-deps
 before_script:
   - mkdir build
   - cd build
